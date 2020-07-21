@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Segment, Image, Button, Icon, Header,
 } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import dailyActions from '../Redux/dailyActions';
 
-const ImageCard = props => {
+const ImageCard = () => {
+  const daily = useSelector(state => state.daily.daily, shallowEqual) || [];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(dailyActions.fetchDaily());
+  }, [dispatch]);
+
   const {
     url, title, date, explanation, copyright,
-  } = props;
+  } = daily;
+
   return (
     <Segment raised>
       <Image src={url} wrapped ui={false} />
@@ -28,16 +37,6 @@ const ImageCard = props => {
       </Button>
     </Segment>
   );
-};
-
-ImageCard.propTypes = {
-
-  url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  explanation: PropTypes.string.isRequired,
-  copyright: PropTypes.string.isRequired,
-
 };
 
 export default ImageCard;

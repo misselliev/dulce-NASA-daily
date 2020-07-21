@@ -6,7 +6,7 @@ const Navbar = () => (
   <nav className="ui container">
     <Menu>
       <Link className="header item" to="/">
-        <i className="paw icon" />
+        <i className="rocket icon" />
         Dulce NASA
       </Link>
       <Menu.Item className="menu right">
