@@ -6,3 +6,25 @@ body {
 .ui.menu .item {
   position: inherit;
 }
+
+.ui.segment .image {
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  margin: 1.5em auto 1.5em auto;
+}
+
+.description {
+  margin: auto 4em auto 4em;
+  text-align: justify;
+  word-spacing: 0.5em;
+  line-height: 1.5em;
+}
+
+.favorite-btn {
+  margin: 1.5em auto 1.5em auto !important;
+}
+
+/* #006992
+#0a497b */
