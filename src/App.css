@@ -1,10 +1,19 @@
 body {
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+#root {
+  background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+}
+
+.ui.menu {
+  height: 4em;
 }
 
 .ui.menu .item {
   position: inherit;
+  color: #006992 !important;
 }
 
 .ui.segment .image {
@@ -15,6 +24,10 @@ body {
   margin: 1.5em auto 1.5em auto;
 }
 
+i.icon {
+  margin-top: -0.3em !important;
+}
+
 .description {
   margin: auto 4em auto 4em;
   text-align: justify;
@@ -22,8 +35,24 @@ body {
   line-height: 1.5em;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.segment-btn {
+  margin-top: 1.5em !important;
+}
+
 .favorite-btn {
-  margin: 1.5em auto 1.5em auto !important;
+  margin-top: 2.8em !important;
+}
+
+.main-header {
+  color: #0a497b !important;
+  font-family: 'Courgette', cursive !important;
+  font-size: 3em !important;
+  margin-top: 0.3em !important;
 }
 
 /* #006992
