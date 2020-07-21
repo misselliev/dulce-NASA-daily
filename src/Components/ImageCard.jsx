@@ -7,6 +7,7 @@ import dailyActions from '../Redux/dailyActions';
 
 const ImageCard = () => {
   const daily = useSelector(state => state.daily.daily, shallowEqual) || [];
+  const error = useSelector(state => state.daily.error, shallowEqual) || [];
   const [search, setSearch] = useState('');
   const [newDate, setDate] = useState('');
   const dispatch = useDispatch();
@@ -44,9 +45,14 @@ const ImageCard = () => {
         </div>
         <Header as="h4">
           Copyright:
-          {copyright}
+          {copyright === '' ? copyright : ' Public Domain'}
         </Header>
       </div>
+      {error !== '' && (
+      <div className="error">
+        {error}
+      </div>
+      )}
       <div className="buttons">
         <Button basic color="red" className="favorite-btn">
           <Icon name="heart" />

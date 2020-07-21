@@ -7,6 +7,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const initState = {
   daily: {},
   favorites: {},
+  error: {},
 };
 
 const store = createStore(rootReducer, initState, composeEnhancer(applyMiddleware(thunk)));

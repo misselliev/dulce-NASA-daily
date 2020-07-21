@@ -55,5 +55,14 @@ i.icon {
   margin-top: 0.3em !important;
 }
 
+.ui.form .field .ui.input input {
+  text-align: center;
+}
+
+.error {
+  margin-top: 2em;
+  font-weight: bold;
+}
+
 /* #006992
 #0a497b */
