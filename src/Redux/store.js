@@ -13,6 +13,8 @@ const initState = {
 
 const store = createStore(rootReducer, initState, composeEnhancer(applyMiddleware(thunk)));
 
-storeSynchronize(store);
+storeSynchronize(store, {
+  whitelist: ['favorites'],
+});
 
 export default store;

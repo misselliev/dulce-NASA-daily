@@ -4,8 +4,8 @@ export default (state = {}, { type, payload }) => {
       return { ...state, favorites: payload };
     case 'ADD_FAVORITE':
       return { ...state, favorites: [...state.favorites, payload] };
-    // case 'REMOVE_FAVORITE':
-    //   return { ...state, favorites: state.favorite.filter(item => item.date !== payload.date) };
+    case 'REMOVE_FAVORITE':
+      return { ...state, favorites: state.favorites.filter(item => item.date !== payload) };
     default:
       return state;
   }

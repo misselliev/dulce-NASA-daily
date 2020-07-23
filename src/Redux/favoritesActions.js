@@ -17,9 +17,8 @@ const addToFavorites = item => dispatch => {
   dispatch(addFavorite(item));
 };
 
-const fetchFavorites = () => dispatch => {
-  const data = localStorage.getItem('favorites');
-  dispatch(loadFavorites(data));
+const fetchFavorites = favorites => dispatch => {
+  dispatch(loadFavorites(favorites));
 };
 
 const removeFromFavorites = item => dispatch => {

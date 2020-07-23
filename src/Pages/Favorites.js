@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  Container, Header, Segment, Image, Icon, Button, Card,
+  Container, Header, Segment, Image, Icon, Button,
 } from 'semantic-ui-react';
 import favoritesActions from '../Redux/favoritesActions';
 
@@ -10,23 +10,21 @@ const Favorites = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(favoritesActions.fetchFavorites());
-  }, [dispatch]);
+    dispatch(favoritesActions.fetchFavorites(favorites));
+  }, [dispatch, favorites]);
 
   const removeFromFavorites = item => {
     dispatch(favoritesActions.removeFromFavorites(item));
   };
 
-  const {
-    url, title, date, explanation, copyright,
-  } = favorites;
-
   return (
     <Container>
-      <Header as="h1">Favorites</Header>
+      <Header as="h1" className="main-header">Favorites</Header>
       <Segment raised>
-        {favorites.map(item => (
-          <Card key={item.title}>
+        {favorites.map(({
+          title, date, explanation, copyright, url,
+        }) => (
+          <Segment key={date}>
             <Image src={url} wrapped ui={false} />
             <div className="information">
               <Header as="h2">{title}</Header>
@@ -39,12 +37,12 @@ const Favorites = () => {
               </Header>
             </div>
             <div className="buttons">
-              <Button basic color="red" className="segment-btn" onClick={removeFromFavorites(item)}>
+              <Button basic color="red" className="segment-btn" onClick={() => removeFromFavorites(date)}>
                 <Icon name="heart" />
                 Remove from Favorite
               </Button>
             </div>
-          </Card>
+          </Segment>
         ))}
       </Segment>
     </Container>
