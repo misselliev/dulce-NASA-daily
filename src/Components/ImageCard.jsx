@@ -40,6 +40,16 @@ const ImageCard = () => {
     dispatch(favoriteActions.addToFavorites(item));
   };
 
+  const getNextDay = date => {
+    const nextDate = moment(date).add(1, 'days').format('YYYY-MM-DD');
+    dispatch(dailyActions.fetchDay(nextDate));
+  };
+
+  const getPastDay = date => {
+    const pastDate = moment(date).subtract(1, 'days').format('YYYY-MM-DD');
+    dispatch(dailyActions.fetchDay(pastDate));
+  };
+
   const {
     url, title, date, explanation, copyright,
   } = daily;
@@ -47,6 +57,14 @@ const ImageCard = () => {
   return (
     <Segment raised>
       <Image src={url} wrapped ui={false} />
+      <div className="nav-buttons">
+        <Button onClick={() => getPastDay(daily.date)}>
+          <Icon name="angle double left" />
+        </Button>
+        <Button onClick={() => getNextDay(daily.date)}>
+          <Icon name="angle double right" />
+        </Button>
+      </div>
       <div className="information">
         <Header as="h2">{title}</Header>
         <Header as="h3">{date}</Header>
@@ -62,7 +80,7 @@ const ImageCard = () => {
         {error}
       </div>
       )}
-      <div className="buttons">
+      <div className="bottom-button-container">
         <Button basic color="red" className="segment-btn" onClick={() => addToFavorites(daily)}>
           <Icon name="heart" />
           Set as Favorite

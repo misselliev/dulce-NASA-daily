@@ -21,6 +21,11 @@ const Favorites = () => {
     <Container>
       <Header as="h1" className="main-header">Favorites</Header>
       <Segment raised>
+        {/* {favorites.length !== '0' && (
+          <div className="test">
+            <h3>Currently, you have no favorites</h3>
+          </div>
+        )} */}
         {favorites.map(({
           title, date, explanation, copyright, url,
         }) => (
