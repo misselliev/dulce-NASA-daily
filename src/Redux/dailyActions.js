@@ -1,18 +1,25 @@
 import axios from 'axios';
 
-const loadDaily = daily => ({
-  type: 'LOAD_DAILY',
-  payload: daily,
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+const loadDay = day => ({
+  type: 'LOAD_DAY',
+  payload: day,
 });
 
-const fetchDaily = () => dispatch => {
-  axios.get('https://api.nasa.gov/planetary/apod?api_key=v9S9pmY9N2jggrtQqzmRxiPtsWLoB9GsrbbpY4b9&date=2020-07-20').then(res => {
-    dispatch(loadDaily(res.data));
+const errorLoad = error => ({
+  type: 'ERROR_LOAD',
+  payload: error,
+});
+
+const fetchDay = date => dispatch => {
+  axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}${date !== ' ' ? `&date=${date}` : ''}`).then(res => {
+    dispatch(loadDay(res.data));
   }).catch(error => {
-    throw (error);
+    dispatch(errorLoad(error.response.data.msg));
   });
 };
 
 export default {
-  fetchDaily,
+  fetchDay,
 };
