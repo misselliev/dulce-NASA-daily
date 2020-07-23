@@ -8,5 +8,4 @@ const Home = () => (
     <ImageCard />
   </Container>
 );
-
 export default Home;

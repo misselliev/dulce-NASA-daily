@@ -3,13 +3,18 @@ import {
   Segment, Image, Button, Icon, Header, Form,
 } from 'semantic-ui-react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import dailyActions from '../Redux/dailyActions';
+import favoriteActions from '../Redux/favoritesActions';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const ImageCard = () => {
   const daily = useSelector(state => state.daily.daily, shallowEqual) || [];
   const error = useSelector(state => state.daily.error, shallowEqual) || [];
   const [search, setSearch] = useState('');
   const [newDate, setDate] = useState('');
+  const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
 
   const selectDay = newDate => {
@@ -17,17 +22,22 @@ const ImageCard = () => {
   };
 
   useEffect(() => {
-    dispatch(dailyActions.fetchDaily());
-  }, [dispatch, newDate]);
-
-  const updateSearch = e => {
-    setSearch(e.target.value);
-  };
+    dispatch(dailyActions.fetchDay(newDate));
+  }, [dispatch, newDate, search]);
 
   const getDate = e => {
     e.preventDefault();
     setDate(search);
     setSearch('');
+  };
+
+  const updateDate = date => {
+    setStartDate(date);
+    setSearch(moment(date).format('YYYY-MM-DD'));
+  };
+
+  const addToFavorites = item => {
+    dispatch(favoriteActions.addToFavorites(item));
   };
 
   const {
@@ -44,8 +54,7 @@ const ImageCard = () => {
           {explanation}
         </div>
         <Header as="h4">
-          Copyright:
-          {copyright === '' ? copyright : ' Public Domain'}
+          {copyright}
         </Header>
       </div>
       {error !== '' && (
@@ -54,19 +63,18 @@ const ImageCard = () => {
       </div>
       )}
       <div className="buttons">
-        <Button basic color="red" className="favorite-btn">
+        <Button basic color="red" className="segment-btn" onClick={() => addToFavorites(daily)}>
           <Icon name="heart" />
           Set as Favorite
         </Button>
         <Form className="search" onSubmit={getDate}>
-          <Form.Input
+          <DatePicker
             className="segment-btn"
-            placeholder="YYYY/MM/DD"
-            value={search}
-            onChange={updateSearch}
-            label="Date"
+            dateFormat="yyyy/MM/dd"
+            selected={startDate}
+            onChange={updateDate}
           />
-          <Button basic color="blue" type="submit" className="segment-btn" onClick={selectDay(newDate)}>
+          <Button basic color="blue" type="submit" className="segment-btn" onClick={() => selectDay(newDate)}>
             <Icon name="search" />
             Search another day
           </Button>

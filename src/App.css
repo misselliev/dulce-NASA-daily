@@ -1,19 +1,22 @@
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-}
-
-#root {
-  background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+  background: url('https://images.unsplash.com/uploads/14116941824817ba1f28e/78c8dff1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1533&q=80') no-repeat fixed;
+  background-size: cover;
 }
 
 .ui.menu {
   height: 4em;
 }
 
+.ui.menu,
+.ui.segment {
+  opacity: 0.85;
+}
+
 .ui.menu .item {
   position: inherit;
-  color: #006992 !important;
+  color: #22a2d4 !important;
 }
 
 .ui.segment .image {
@@ -21,7 +24,8 @@ body {
   height: 50%;
   overflow: hidden;
   display: flex;
-  margin: 1.5em auto 1.5em auto;
+  margin: 1.5em auto 2em auto;
+  box-shadow: 11px 7px 10px gray;
 }
 
 i.icon {
@@ -41,21 +45,22 @@ i.icon {
 }
 
 .segment-btn {
-  margin-top: 1.5em !important;
-}
-
-.favorite-btn {
   margin-top: 2.8em !important;
 }
 
 .main-header {
-  color: #0a497b !important;
+  color: white !important;
   font-family: 'Courgette', cursive !important;
   font-size: 3em !important;
   margin-top: 0.3em !important;
+  text-shadow: 1px 1px 2px #1fb7f3;
 }
 
 .ui.form .field .ui.input input {
+  text-align: center;
+}
+
+.ui.form input[type=text] {
   text-align: center;
 }
 
@@ -64,5 +69,10 @@ i.icon {
   font-weight: bold;
 }
 
-/* #006992
-#0a497b */
+form.ui.form.search {
+  display: flex;
+}
+
+.ui.raised.segment {
+  margin-bottom: 2em;
+}

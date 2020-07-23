@@ -3,7 +3,6 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   Container, Header, Segment, Image, Icon, Button, Card,
 } from 'semantic-ui-react';
-// import PropTypes from 'prop-types';
 import favoritesActions from '../Redux/favoritesActions';
 
 const Favorites = () => {
@@ -21,7 +20,7 @@ const Favorites = () => {
   const {
     url, title, date, explanation, copyright,
   } = favorites;
-console.log(favorites);
+
   return (
     <Container>
       <Header as="h1">Favorites</Header>
@@ -51,9 +50,5 @@ console.log(favorites);
     </Container>
   );
 };
-
-// Favorites.propTypes = {
-//   favoritesObject: PropTypes.objectOf(PropTypes.object).isRequired,
-// };
 
 export default Favorites;
