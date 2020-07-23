@@ -29,7 +29,7 @@ const Favorites = () => {
         {favorites.map(({
           title, date, explanation, copyright, url,
         }) => (
-          <Segment key={date}>
+          <Segment raised key={date}>
             <Image src={url} wrapped ui={false} />
             <div className="information">
               <Header as="h2">{title}</Header>

@@ -85,4 +85,5 @@ form.ui.form.search {
 .nav-buttons {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 1em;
 }
