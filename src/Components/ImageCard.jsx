@@ -81,7 +81,7 @@ const ImageCard = () => {
       </div>
       )}
       <div className="bottom-button-container">
-        <Button basic color="red" className="segment-btn" onClick={() => addToFavorites(daily)}>
+        <Button color="green" className="segment-btn" onClick={() => addToFavorites(daily)}>
           <Icon name="heart" />
           Set as Favorite
         </Button>
@@ -92,7 +92,7 @@ const ImageCard = () => {
             selected={startDate}
             onChange={updateDate}
           />
-          <Button basic color="blue" type="submit" className="segment-btn" onClick={() => selectDay(newDate)}>
+          <Button color="teal" type="submit" className="segment-btn" onClick={() => selectDay(newDate)}>
             <Icon name="search" />
             Search another day
           </Button>

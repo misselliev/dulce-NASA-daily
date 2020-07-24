@@ -22,7 +22,7 @@ Hi Ground control:wave:, This is Major Dulce the Chihuahua :dog: and NASA :rocke
 
 ## ✨ Live Demo
 
-You can look at it [here]() //to be updated.
+You can look at it [here](https://dulce-nasa-daily.netlify.app/).
 
 
 ## Author
