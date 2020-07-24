@@ -1,39 +1,89 @@
-.App {
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background: url('https://images.unsplash.com/uploads/14116941824817ba1f28e/78c8dff1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1533&q=80') no-repeat fixed;
+  background-size: cover;
+}
+
+.ui.menu {
+  height: 4em;
+}
+
+.ui.menu,
+.ui.segment {
+  opacity: 0.85;
+}
+
+.ui.menu .item {
+  position: inherit;
+  color: navy !important;
+}
+
+.ui.segment .image {
+  width: 60%;
+  height: 90%;
+  overflow: hidden;
+  display: flex;
+  margin: 1em auto 2em auto;
+  box-shadow: 11px 7px 10px gray;
+}
+
+img {
+  width: 100%;
+}
+
+i.icon {
+  margin-top: -0.3em !important;
+}
+
+.description {
+  margin: auto 4em auto 4em;
+  text-align: justify;
+  word-spacing: 0.5em;
+  line-height: 1.5em;
+}
+
+.bottom-button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+
+.segment-btn {
+  margin-top: 1em !important;
+}
+
+.main-header {
+  color: white !important;
+  font-family: 'Courgette', cursive !important;
+  font-size: 3em !important;
+  margin-top: 0.3em !important;
+  text-shadow: 1px 1px 2px #1fb7f3;
+}
+
+.ui.form .field .ui.input input {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ui.form input[type=text] {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.error {
+  margin-top: 2em;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form.ui.form.search {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ui.raised.segment {
+  margin-bottom: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
 }
