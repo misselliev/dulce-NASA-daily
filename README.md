@@ -6,7 +6,6 @@
 Hi Ground control:wave:, This is Major Dulce the Chihuahua :dog: and NASA :rocket: showing you how the sky looks very different today. 
 
 ![Homescreen](docs/home.png)
-![Homescreen-gif](docs/giphy.gif)
 
 ## 🔨 Tools
 - React
@@ -23,7 +22,7 @@ Hi Ground control:wave:, This is Major Dulce the Chihuahua :dog: and NASA :rocke
 
 ## ✨ Live Demo
 
-You can look at it [here]() //to be updated.
+You can look at it [here](https://dulce-nasa-daily.netlify.app/).
 
 
 ## Author
