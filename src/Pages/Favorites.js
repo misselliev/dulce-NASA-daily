@@ -44,7 +44,7 @@ const Favorites = () => {
               </Header>
             </div>
             <div className="buttons">
-              <Button basic color="red" className="segment-btn" onClick={() => removeFromFavorites(date)}>
+              <Button color="green" className="segment-btn" onClick={() => removeFromFavorites(date)}>
                 <Icon name="heart" />
                 Remove from Favorite
               </Button>
