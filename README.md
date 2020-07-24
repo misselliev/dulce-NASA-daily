@@ -5,7 +5,8 @@
 
 Hi Ground control:wave:, This is Major Dulce the Chihuahua :dog: and NASA :rocket: showing you how the sky looks very different today. 
 
-![alt text](docs/giphy.gif)
+![Homescreen](docs/home.png)
+![Homescreen-gif](docs/giphy.gif)
 
 ## 🔨 Tools
 - React
@@ -17,6 +18,7 @@ Hi Ground control:wave:, This is Major Dulce the Chihuahua :dog: and NASA :rocke
 - CSS
 - ES6
 - Semantic UI
+- Redux-localstore
 
 
 ## ✨ Live Demo
