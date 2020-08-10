@@ -1,7 +1,7 @@
-import firebase from '../firebaseConfig';
+// import firebase from '../firebaseConfig';
 
-const databaseRef = firebase.database().ref();
-const favoritesRef = databaseRef.child('favorites');
+// const databaseRef = firebase.database().ref();
+// const favoritesRef = databaseRef.child('favorites');
 
 const addFavorite = item => ({
   type: 'ADD_FAVORITE',
@@ -20,17 +20,19 @@ const loadFavorites = favorites => ({
 
 const addToFavorites = item => dispatch => {
   dispatch(addFavorite(item));
-  favoritesRef.push().set(item);
+  // favoritesRef.push().set(item);
 };
 
 const fetchFavorites = favorites => dispatch => {
   dispatch(loadFavorites(favorites));
-  favoritesRef.on('value', snapshot => {
-    dispatch({
-      type: 'FETCH_FAVORITES',
-      payload: snapshot.val(),
-    });
-  });
+  // if (favoritesRef !== null) {
+  //   favoritesRef.on('value', snapshot => {
+  //     dispatch({
+  //       type: 'FETCH_FAVORITES',
+  //       payload: snapshot.val(),
+  //     });
+  //   });
+  // }
 };
 
 const removeFromFavorites = item => dispatch => {

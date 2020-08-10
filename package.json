@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
     "axios": "^0.19.2",
     "date-fns": "^2.15.0",
     "firebase": "^7.17.2",
@@ -20,7 +24,8 @@
     "redux-localstore": "^1.0.0",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
