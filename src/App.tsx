@@ -5,10 +5,10 @@ import Routes from './Routes';
 import Navbar from './Components/Navbar';
 
 const App: React.FC = () => (
-  <Router>
-    <Navbar />
-    <Routes />
-  </Router>
+    <Router>
+        <Navbar />
+        <Routes />
+    </Router>
 );
 
 export default App;

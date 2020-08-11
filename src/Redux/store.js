@@ -6,15 +6,15 @@ import rootReducer from './rootReducer';
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initState = {
-  daily: {},
-  error: {},
-  favorites: { favorites: [] },
+    daily: {},
+    error: {},
+    favorites: { favorites: [] },
 };
 
 const store = createStore(rootReducer, initState, composeEnhancer(applyMiddleware(thunk)));
 
 storeSynchronize(store, {
-  whitelist: ['favorites'],
+    whitelist: ['favorites'],
 });
 
 export default store;
