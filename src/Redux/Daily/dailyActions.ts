@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Dispatch } from 'react';
-import { Day, Error, LoadDayAction, LoadErrorAction } from './DailyTypes';
+import { Day, Error, LoadDayAction, ErrorLoadAction } from './DailyTypes';
 import { ActionCreator } from 'redux';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
