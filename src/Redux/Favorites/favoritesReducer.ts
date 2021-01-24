@@ -1,3 +1,5 @@
+import { Favorite, Favorites, ADD_FAVORITE, REMOVE_FAVORITE, LOAD_FAVORITES } from './FavoritesTypes';
+
 export default (state = {}, { type, payload }) => {
     switch (type) {
         case 'LOAD_FAVORITES':
